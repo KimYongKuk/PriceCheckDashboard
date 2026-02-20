@@ -1,0 +1,27 @@
+naver_api:
+  client_id: "YOUR_NAVER_CLIENT_ID"
+  client_secret: "YOUR_NAVER_CLIENT_SECRET"
+
+slack:
+  webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+  enabled: false
+
+collector:
+  search_display: 100
+  request_delay_ms: 150
+  exclude_keywords:
+    - "세트"
+    - "묶음"
+    - "박스"
+    - "개입"
+
+supabase:
+  url: "https://YOUR_PROJECT_ID.supabase.co"
+  anon_key: "YOUR_SUPABASE_ANON_KEY"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:5173"
