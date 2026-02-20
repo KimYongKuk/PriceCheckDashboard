@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -14,11 +15,15 @@ async def lifespan(app: FastAPI):
     yield
 
 
+# Vercel 배포 시 /api prefix 사용, 로컬에서는 없음
+root_path = "/api" if os.environ.get("VERCEL") else ""
+
 app = FastAPI(
     title="PriceWatch API",
     version="1.0.0",
     description="상품 가격 모니터링 시스템 API",
     lifespan=lifespan,
+    root_path=root_path,
 )
 
 # CORS
